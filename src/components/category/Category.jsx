@@ -1,7 +1,6 @@
 import React from "react"
 
 const Category = ({ category: { title, imageUrl } }) => {
-  console.log(imageUrl)
   return (
     <div className="category-container">
       <div
