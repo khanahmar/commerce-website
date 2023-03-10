@@ -1,7 +1,6 @@
 import React from "react"
 import { useState } from "react"
 import {
-  createAuthUserWithEmailAndPassword,
   createUserDocFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
@@ -15,7 +14,7 @@ const defaultForm = {
   password: "",
 }
 
-const SignUpForm = () => {
+const SignInForm = () => {
   const [formSubmit, setFormSubmit] = useState(defaultForm)
   const { email, password } = formSubmit
 
@@ -32,8 +31,8 @@ const SignUpForm = () => {
     e.preventDefault()
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password)
-      console.log(response)
+      const { user } = await signInAuthUserWithEmailAndPassword(email, password)
+
       resetForm()
     } catch (error) {
       if (error.code === "auth/wrong-password") {
@@ -83,4 +82,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default SignInForm

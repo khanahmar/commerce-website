@@ -1,5 +1,5 @@
 import React from "react"
-import SignInForm from "../../sign-in-form/SignIn"
+import SignInForm from "../../sign-in-form/SignInForm"
 import SignUpForm from "../../sign-up-form/SignUpForm"
 import "./authenticatoin.scss"
 
