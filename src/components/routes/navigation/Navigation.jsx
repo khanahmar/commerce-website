@@ -5,6 +5,7 @@ import { Fragment } from "react"
 import svg from "../../../assets/87 - crown.svg"
 import "./navigation.scss"
 import { signOutUser } from "../../../utility/firebase/firebase"
+import CartIcon from "../../cart-icon/CartIcon"
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
@@ -31,6 +32,7 @@ const Navigation = () => {
             </Link>
           )}
         </div>
+        <CartIcon />
       </div>
       <Outlet />
     </Fragment>

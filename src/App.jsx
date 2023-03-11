@@ -2,17 +2,14 @@ import Home from "./components/routes/home/Home"
 import { Routes, Route } from "react-router-dom"
 import Navigation from "./components/routes/navigation/Navigation"
 import Authentication from "./components/routes/authentication/Authentication"
-
-const Shop = () => {
-  return <div>This is shop component</div>
-}
+import ShopComponent from "./components/routes/shop/ShopComponent"
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop" element={<ShopComponent />} />
         <Route path="auth" element={<Authentication />} />
       </Route>
     </Routes>
