@@ -6,9 +6,12 @@ import svg from "../../../assets/87 - crown.svg"
 import "./navigation.scss"
 import { signOutUser } from "../../../utility/firebase/firebase"
 import CartIcon from "../../cart-icon/CartIcon"
+import CartDropdown from "../../cart-dropdown/CartDropdown"
+import { CartContext } from "../../../contexts/CartContext"
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
+  const { isCartOpen } = useContext(CartContext)
 
   return (
     <Fragment>
@@ -31,8 +34,9 @@ const Navigation = () => {
               Sign in
             </Link>
           )}
+          <CartIcon />
         </div>
-        <CartIcon />
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
