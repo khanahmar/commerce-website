@@ -4,6 +4,7 @@ import "./cart-dropdown.scss"
 import CartItem from "../cart-item/CartItem"
 import { useContext } from "react"
 import { CartContext } from "../../contexts/CartContext"
+import { Link } from "react-router-dom"
 
 const CartDropdown = () => {
   const { cartItems } = useContext(CartContext)
@@ -14,7 +15,9 @@ const CartDropdown = () => {
           return <CartItem key={product.id} cartItem={product} />
         })}
       </div>
-      <Buttton>CHECKOUT</Buttton>
+      <Link to={"/checkout"} className="nav-link">
+        <Buttton>CHECKOUT</Buttton>
+      </Link>
     </div>
   )
 }
